@@ -34,5 +34,5 @@ def has_path(root, target):
   return has_path(root.left, target-root.val) or has_path(root.right, target-root.val)
 
 # Time Complexity: O(n) 
-# Space Complexity: O(n)
-# where n is the number of nodes 
+# Space Complexity: O(h) 
+# where n is the number of nodes and h is the height of the tree, which could also be n in the worst case scenario
