@@ -53,7 +53,7 @@ print(maximum_subarray_sum([2, 1, 5, 1, 3, 2], k=3 ))
 
 print(maximum_subarray_sum([2, 3, 4, 1, 5], k=2 ))
 
-# follow up return the array witht he maximum
+# follow up return the array witht the maximum
 def maximum_subarray_sum_follow_up(arr, k):
     if k > len(arr):
         return 0
