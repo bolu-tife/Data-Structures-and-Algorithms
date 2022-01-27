@@ -32,7 +32,6 @@ class Solution:
         if root is None:
             return result
 
-        # queue = [root]
         queue = deque()
         queue.append(root)
 
