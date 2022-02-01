@@ -31,6 +31,8 @@ def find_averages_of_subarrays(K, arr):
 #   Space complexity = O(n)
 # where n is the number of element in the array and k is k
 
+
+
 def find_averages_of_subarray_sliding_window(arr, k):
     if k > len(arr):
         return []
@@ -54,6 +56,8 @@ def find_averages_of_subarray_sliding_window(arr, k):
 #   Time complexity = O(n)
 #   Space complexity = O(n)
 # where n is the number of element in the array 
+
+
 
 # followup return the maximum average subarray of size k, https://leetcode.com/problems/maximum-average-subarray-i/
 
