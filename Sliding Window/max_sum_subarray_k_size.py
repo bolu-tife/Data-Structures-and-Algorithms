@@ -12,7 +12,7 @@
 # answer for k when it is greater than the length - 0
 
 
-# Approach brute force:
+# Approach: Brute Force:
 def maximum_subarray_sum_brute(arr, k):
     max_so_far = 0
     for i in range(len(arr)-k + 1):
@@ -24,13 +24,12 @@ def maximum_subarray_sum_brute(arr, k):
 
     return max_so_far
 
+# Time Complexity: O(n*k), where n is the length of the array and k is k
+# space Complexity: O(1)
 
-print(maximum_subarray_sum_brute([2, 1, 5, 1, 3, 2], k=3 ))
 
-print(maximum_subarray_sum_brute([2, 3, 4, 1, 5], k=2 ))
 
-# Approach:
-# use sliding window pattern
+# Approach: Sliding Window Pattern
 # keep track of sum and update maximum_sum and sum as we go
 
 def find_maximum_sum_subarray_k_size(arr, k):
@@ -55,6 +54,7 @@ def find_maximum_sum_subarray_k_size(arr, k):
 
 # Time Complexity: O(n), where n is the length of the array
 # space Complexity: O(1)
+
 
 
 # follow up return the array witht the maximum
