@@ -14,15 +14,15 @@
 
 # Approach brute force:
 def maximum_subarray_sum_brute(arr, k):
-    max_sum = 0
+    max_so_far = 0
     for i in range(len(arr)-k + 1):
-        curr_sum = 0
+        sum_so_far = 0
 
         for j in range(i, i+k):
-            curr_sum += arr[j]
-        max_sum = max(max_sum, curr_sum)
+            sum_so_far += arr[j]
+        max_so_far = max(max_so_far, sum_so_far)
 
-    return max_sum
+    return max_so_far
 
 
 print(maximum_subarray_sum_brute([2, 1, 5, 1, 3, 2], k=3 ))
@@ -31,47 +31,57 @@ print(maximum_subarray_sum_brute([2, 3, 4, 1, 5], k=2 ))
 
 # Approach:
 # use sliding window pattern
-# keep track of sum and update maximum sum as we go
+# keep track of sum and update maximum_sum and sum as we go
 
-
-def maximum_subarray_sum(arr, k):
+def find_maximum_sum_subarray_k_size(arr, k):
+    if k == 0 or len(arr) == 0:
+        return 0
     if k > len(arr):
         return 0
-    max_sum = 0 #since it's all positive numbers
-    curr_sum = 0
-    start = 0
-    for i in range(len(arr)):
-        curr_sum += arr[i]
+    
+    window_start = 0
+    sum_so_far = 0
+    maximum_so_far = float('-inf')
 
-        if i >= k -1:
-            max_sum = max(max_sum, curr_sum)
-            curr_sum -= arr[start]
-            start += 1
-    return max_sum
+    for window_end in range(len(arr)):
+        sum_so_far += arr[window_end]
 
-print(maximum_subarray_sum([2, 1, 5, 1, 3, 2], k=3 ))
+        if window_end >= k-1:
+            maximum_so_far = max(maximum_so_far, sum_so_far)
+            sum_so_far -= arr[window_start]
+            window_start -=1
 
-print(maximum_subarray_sum([2, 3, 4, 1, 5], k=2 ))
+    return maximum_so_far
+
+# Time Complexity: O(n), where n is the length of the array
+# space Complexity: O(1)
+
 
 # follow up return the array witht the maximum
 def maximum_subarray_sum_follow_up(arr, k):
+    if k == 0 or len(arr) == 0:
+        return 0
     if k > len(arr):
         return 0
-    max_sum = 0 #since it's all positive numbers
-    curr_sum = 0
-    start = 0
-    max_start = 0
-    for i in range(len(arr)):
-        curr_sum += arr[i]
 
-        if i >= k -1:
-            if max_sum < curr_sum:
-                max_sum = curr_sum
-                max_start = start
-            curr_sum -= arr[start]
-            start += 1
-    return arr[max_start: max_start+k]
+    max_so_far = float('inf') #since it's all positive numbers
+    sum_so_far = 0
+    window_start = 0
+    max_start_index = 0
 
-print(maximum_subarray_sum_follow_up([2, 1, 5, 1, 3, 2], k=3 ))
+    for window_end in range(len(arr)):
+        sum_so_far += arr[window_end]
 
-print(maximum_subarray_sum_follow_up([2, 3, 4, 1, 5], k=2 ))
+        if window_end >= k -1:
+            if max_so_far < sum_so_far:
+                max_so_far = sum_so_far
+                max_start_index = window_start
+
+            sum_so_far -= arr[window_start]
+            window_start += 1
+
+    return arr[max_start_index: max_start_index+k]
+
+# Time Complexity: O(n)
+# space Complexity: O(n)
+# where n is the length of the array
