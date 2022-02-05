@@ -50,3 +50,7 @@ def fruits_into_baskets(fruits):
 		longest_so_far = max(longest_so_far, window_end-window_start+1)
 	
 	return longest_so_far
+
+# Time Complexity: O(n)
+# Space Complexity: O(1) 
+# n is the total size of the array
