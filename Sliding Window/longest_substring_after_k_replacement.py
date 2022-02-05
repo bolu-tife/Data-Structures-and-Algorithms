@@ -44,7 +44,7 @@ assert longest_substring_after_k_replacement(string="abbcb", k=1) == 4
 assert longest_substring_after_k_replacement(string="abccde", k=1) == 3
 
 # Time Complexity: O(n)
-# Space Complexity: O(n) 
+# Space Complexity: O(26) => O(1) because we have atmost 26 uppercase english letters and the space remains the same as it grows 
 # n is the total size of the array
 
 # It's best to visualize the solution to understand it.
