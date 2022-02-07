@@ -22,10 +22,10 @@ def find_pair(arr, target):
     end = len(arr)-1
 
     while start < end:
-        pair = arr[start] + arr[end]
-        if pair < target:
+        pair_sum = arr[start] + arr[end]
+        if pair_sum < target:
             start +=1
-        elif pair > target:
+        elif pair_sum > target:
             end -= 1
         else:
             return [start, end]
@@ -33,10 +33,17 @@ def find_pair(arr, target):
     return [-1, -1]
 
 
-print(find_pair([1, 2, 3, 4, 6], target=6))
-print(find_pair([2, 5, 9, 11], target=11))
-print(find_pair([1,2,3,4], 15))
-print(find_pair([1,2,3], 6))
+assert find_pair([1, 2, 3, 4, 6], target=6 ) == [1,3]
+assert find_pair([2, 5, 9, 11], target=11) == [0, 2]
+assert find_pair([1,2,3,4], 15) == [-1,-1]
+assert find_pair([1,2,3], 6) == [-1,-1]
+
+
+#   Time complexity = O(n)
+#   Space complexity = O(1)
+# where n is the number of element in the array 
+
+
 
 # Hash table approach
 
@@ -52,7 +59,11 @@ def hash_find_pair(arr, target):
             seen[arr[i]] = i
     return [-1,-1]
 
-print(hash_find_pair([1, 2, 3, 4, 6], target=6))
-print(hash_find_pair([2, 5, 9, 11], target=11))
-print(hash_find_pair([1,2,3,4], 15))
-print(hash_find_pair([1,2,3], 6))
+assert hash_find_pair([1, 2, 3, 4, 6], target=6) == [1,3]
+assert hash_find_pair([2, 5, 9, 11], target=11) == [0, 2]
+assert hash_find_pair([1,2,3,4], 15) == [-1,-1]
+assert hash_find_pair([1,2,3], 6) == [-1,-1]
+
+#   Time complexity = O(n)
+#   Space complexity = O(n)
+# where n is the number of element in the array 
