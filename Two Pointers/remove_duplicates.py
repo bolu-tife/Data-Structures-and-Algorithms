@@ -8,3 +8,8 @@ def remove_duplicates(arr):
       non_duplicate += 1
       arr[non_duplicate] = arr[runner]
   return non_duplicate + 1
+
+
+#   Time complexity = O(n)
+#   Space complexity = O(1)
+# where n is the number of element in the array 
