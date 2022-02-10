@@ -1,6 +1,3 @@
-from tkinter import RIGHT
-
-
 def square_sorted(arr):
     left = 0
     right = len(arr)-1

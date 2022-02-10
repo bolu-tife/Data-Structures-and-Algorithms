@@ -1,21 +1,21 @@
 # https://leetcode.com/problems/3sum/
 
-Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+# Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
-Notice that the solution set must not contain duplicate triplets.
+# Notice that the solution set must not contain duplicate triplets.
 
 
-Example 1:
-Input: nums = [-1,0,1,2,-1,-4]
-Output: [[-1,-1,2],[-1,0,1]]
+# Example 1:
+# Input: nums = [-1,0,1,2,-1,-4]
+# Output: [[-1,-1,2],[-1,0,1]]
 
-Example 2:
-Input: nums = []
-Output: []
+# Example 2:
+# Input: nums = []
+# Output: []
 
-Example 3:
-Input: nums = [0]
-Output: []
+# Example 3:
+# Input: nums = [0]
+# Output: []
 
 
 def triple_sum_zero(nums):
@@ -54,7 +54,12 @@ def triple_sum_zero(nums):
     
     return answer
 
-# print(triple_sum_zero([-3, 0, 1, 2, -1, 1, -2]))
-# print(triple_sum_zero([-5, 2, -1, -2, 3]))
-# print(triple_sum_zero([-1,0,1,2,-1,-4]))
+print(triple_sum_zero([-3, 0, 1, 2, -1, 1, -2]))
+print(triple_sum_zero([-5, 2, -1, -2, 3]))
+print(triple_sum_zero([-1,0,1,2,-1,-4]))
 print(triple_sum_zero([0,0,0]))
+
+            
+#   Time complexity = O(n^2 + nlog(n))
+#   Space complexity = O(n)
+# where n is the number of element in the array 
