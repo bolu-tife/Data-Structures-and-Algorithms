@@ -1,38 +1,50 @@
+# https://leetcode.com/problems/linked-list-cycle/
+# Given the head of a Singly LinkedList, write a function to determine if the LinkedList has a cycle in it or not.
+
 class Node:
   def __init__(self, value, next=None):
     self.value = value
     self.next = next
 
-
 def has_cycle(head):
   # TODO: Write your code here
   if not head:
     return False
-  fast, slow = head, head
+  
+  slow, fast = head, head
 
   while fast and fast.next:
     slow = slow.next
     fast = fast.next.next
-
+    
     if slow == fast:
       return True
+  
   return False
 
+#   Time complexity = O(n)
+#   Space complexity = O(1)
+# where n is the number of element in the array 
 
-def main():
-  head = Node(1)
-  head.next = Node(2)
-  head.next.next = Node(3)
-  head.next.next.next = Node(4)
-  head.next.next.next.next = Node(5)
-  head.next.next.next.next.next = Node(6)
-  print("LinkedList has cycle: " + str(has_cycle(head)))
+# Using sets
 
-  head.next.next.next.next.next.next = head.next.next
-  print("LinkedList has cycle: " + str(has_cycle(head)))
+def has_cycle_using_sets(head):
+  # TODO: Write your code here
+  if not head:
+    return False
+  
+  seen = set()
+  pointer = head
 
-  head.next.next.next.next.next.next = head.next.next.next
-  print("LinkedList has cycle: " + str(has_cycle(head)))
+  while pointer:
+    if pointer in seen:
+      return True
+    else:
+      seen.add(pointer)
+      pointer = pointer.next
+  
+  return False
 
-
-main()
+#   Time complexity = O(n)
+#   Space complexity = O(n)
+# where n is the number of element in the array
