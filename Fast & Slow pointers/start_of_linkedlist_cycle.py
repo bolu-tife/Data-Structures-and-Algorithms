@@ -25,7 +25,7 @@ def start_of_ll_cycle(head):
 
 #   Time complexity = O(n)
 #   Space complexity = O(1)
-# where n is the number of element in the array 
+# where n is the number of nodes in the linkedlist 
 
 # using sets
 def find_start_cycle_using_sets(head):
@@ -46,4 +46,4 @@ def find_start_cycle_using_sets(head):
 
 #   Time complexity = O(n)
 #   Space complexity = O(n)
-# where n is the number of element in the array 
+# where n is the number of nodes in the linkedlist 

@@ -24,7 +24,7 @@ def has_cycle(head):
 
 #   Time complexity = O(n)
 #   Space complexity = O(1)
-# where n is the number of element in the array 
+# where n is the number of nodes in the linkedlist 
 
 # Using sets
 
@@ -47,4 +47,4 @@ def has_cycle_using_sets(head):
 
 #   Time complexity = O(n)
 #   Space complexity = O(n)
-# where n is the number of element in the array
+# where n is the number of nodes in the linkedlist

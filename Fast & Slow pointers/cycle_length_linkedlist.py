@@ -25,4 +25,4 @@ def cycle_length(head):
 
 #   Time complexity = O(n)
 #   Space complexity = O(1)
-# where n is the number of element in the array 
+# where n is the number of nodes in the linkedlist 
