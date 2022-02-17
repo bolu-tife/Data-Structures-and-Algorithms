@@ -37,7 +37,6 @@ def reorder(head):
   middle_node = middle_linked_list(current)
   reverse_half = reverse_linked_list(middle_node)
 
-  current = head
   while reverse_half.next :
     current_next = current.next
     reverse_half_next = reverse_half.next
